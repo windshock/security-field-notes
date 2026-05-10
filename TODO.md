@@ -1,0 +1,37 @@
+# TODO
+
+이 파일은 저장소 전체의 backlog입니다. 각 항목은 나중에 `knowledge/`, `experiments/`, `detections/` 아래의 구체적인 문서로 분리할 수 있습니다.
+
+## Inbox
+
+- [ ] PLA/DCOM 기반 원격 ETW 수집 구조를 Windows lab에서 재현하기
+- [ ] `logman -s` 기반 원격 trace session 생성/조회/중지 행위 정리
+- [ ] PLA COM API 직접 호출 방식과 `logman.exe` 방식의 탐지 차이 비교
+- [ ] `Microsoft-Windows-Diagnosis-PLA/Operational` 로그에서 확인 가능한 이벤트 조사
+- [ ] Data Collector Set 생성/시작/중지 시 파일, 레지스트리, 이벤트 흔적 수집
+- [ ] `Session`, `Service`, `Autosession` namespace별 가시성 차이 확인
+- [ ] ETW session tampering 탐지 룰 후보 작성
+- [ ] EDR 미도입 서버에서 보완적 telemetry 수집 구조로 활용 가능한지 검토
+
+## Detection Ideas
+
+- [ ] `logman.exe` command line 기반 탐지
+- [ ] 비관리자 단말에서 서버 대상 DCOM/RPC 접근 탐지
+- [ ] `PerfLogs` 하위 비정상 ETL/BLG 파일 생성 탐지
+- [ ] UNC path로 저장되는 Data Collector Set output 탐지
+- [ ] 보안 관련 ETW session stop/delete/update 탐지
+- [ ] `Service\\` 또는 `Autosession\\` namespace에 생성되는 의심 collector 탐지
+
+## Writing Ideas
+
+- [ ] 블로그: "원격 이벤트 수집은 원래 되는데, 왜 이 글이 흥미로운가?"
+- [ ] 블로그: "Event Log 수집과 ETW trace session 생성의 차이"
+- [ ] LinkedIn 요약: "Agentless EDR이라는 표현이 오해를 부르는 이유"
+- [ ] 내부 보고서 초안: "PLA/DCOM 기반 원격 telemetry와 탐지 사각지대"
+
+## Repo Maintenance
+
+- [ ] 참고 자료는 `references/README.md`에 먼저 등록
+- [ ] 실험 전에는 `experiments/`에 실험 계획부터 작성
+- [ ] 탐지 룰은 검증 전에는 `hypothesis` 상태로 표시
+- [ ] public repo에 원문 PDF나 민감 자료를 직접 올리지 않기
