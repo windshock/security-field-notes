@@ -15,6 +15,7 @@ Security research notes, TODOs, references, and detection hypotheses.
 
 ```text
 .
+├── AGENTS.md                       # AI agent / 사람이 자료 추가할 때 따르는 규칙
 ├── TODO.md                         # 전체 backlog와 다음 작업
 ├── knowledge/                      # 주제별 정리 노트
 │   └── windows/                    # Windows internals, ETW, DCOM, logging
@@ -23,6 +24,8 @@ Security research notes, TODOs, references, and detection hypotheses.
 ├── detections/                     # 탐지 아이디어, Sigma/KQL/YARA 후보
 └── templates/                      # 반복 사용 템플릿
 ```
+
+새 자료를 추가하거나 ChatGPT/Claude에게 commit을 맡길 때는 `AGENTS.md`의 워크플로와 체크리스트를 따릅니다.
 
 ## Note Format
 
