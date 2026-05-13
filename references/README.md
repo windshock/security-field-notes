@@ -10,6 +10,7 @@ Public repository에서는 저작권이 있는 PDF 원문을 직접 저장할 �
 |---|---|---|---|---|
 | 2026-05-10 | No Agent, No Problem: Discovering Remote EDR | Article / PDF | `knowledge/windows/2026-05-10-pla-dcom-agentless-edr.md` | summarized |
 | 2026-05-13 | Defense at AI speed: Microsoft’s new multi-model agentic security system tops leading industry benchmark | Article / PDF | `knowledge/ai-security/2026-05-13-mdash-oh-my-secuaudit-comparison.md` | summarized |
+| 2026-05-13 | Copy Fail / Kernel Live Patching / Rocky Linux Defense Notes | Conversation synthesis / public references | `knowledge/linux/2026-05-13-copyfail-livepatch-rocky-defense-notes.md` | summarized |
 
 ## No Agent, No Problem: Discovering Remote EDR
 
@@ -36,6 +37,21 @@ Public repository에서는 저작권이 있는 PDF 원문을 직접 저장할 �
 - Related note: `knowledge/ai-security/2026-05-13-mdash-oh-my-secuaudit-comparison.md`
 - Why it matters: Microsoft MDASH의 multi-model agentic vulnerability discovery pipeline을 Oh my secuaudit의 reproducible security audit workflow와 비교할 수 있는 기준점을 제공함.
 - Copyright / storage note: PDF 원문은 repository에 commit하지 않음. 공개 가능한 요약과 비교 노트만 보관.
+
+## Copy Fail / Kernel Live Patching / Rocky Linux Defense Notes
+
+- URL: https://github.com/rfxn/copyfail
+- URL: https://docs.tuxcare.com/live-patching-services/
+- URL: https://kernel.org/doc/html/next/livepatch/livepatch.html
+- URL: https://forums.rockylinux.org/t/copyfail-cve-2026-31431-patches-now-available-for-rocky-linux/20422
+- Author: Multiple public sources; local synthesis by windshock / ChatGPT
+- Published: Various
+- Retrieved: 2026-05-13
+- Type: Conversation synthesis / public reference links / defense notes
+- Related note: `knowledge/linux/2026-05-13-copyfail-livepatch-rocky-defense-notes.md`
+- Related detection hypothesis: `detections/linux/page-cache-integrity-divergence.md`
+- Why it matters: Rocky Linux 환경에서 Copy Fail 계열 kernel 취약점 대응을 kernel update + reboot, vendor live patch, page-cache integrity detection, AF_ALG/splice monitoring, fanotify pre-exec validation 관점으로 정리함.
+- Copyright / storage note: 내부 위키 내용, 운영 서버 수량, exploit code, 민감한 호스트 정보는 repository에 기록하지 않음. 공개 가능한 방어 중심 분석과 링크만 보관.
 
 ## Entry Template
 
