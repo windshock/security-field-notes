@@ -9,6 +9,7 @@ Public repository에서는 저작권이 있는 PDF 원문을 직접 저장할 �
 | Date Added | Title | Type | Related Note | Status |
 |---|---|---|---|---|
 | 2026-05-10 | No Agent, No Problem: Discovering Remote EDR | Article / PDF | `knowledge/windows/2026-05-10-pla-dcom-agentless-edr.md` | summarized |
+| 2026-05-13 | Defense at AI speed: Microsoft’s new multi-model agentic security system tops leading industry benchmark | Article / PDF | `knowledge/ai-security/2026-05-13-mdash-oh-my-secuaudit-comparison.md` | summarized |
 
 ## No Agent, No Problem: Discovering Remote EDR
 
@@ -22,6 +23,19 @@ Public repository에서는 저작권이 있는 PDF 원문을 직접 저장할 �
 - Related note: `knowledge/windows/2026-05-10-pla-dcom-agentless-edr.md`
 - Why it matters: PLA/DCOM을 이용한 원격 ETW Data Collector Set 생성과 agentless telemetry 관점의 방어/공격 해석을 다룸.
 - PDF metadata check: uploaded PDF metadata contains title, creator `Safari`, producer `iOS Version 26.4.2 (Build 23E261) Quartz PDFContext`, creation/modification date, but no embedded original URL was found in metadata, annotations, attachments, or extracted text.
+
+## Defense at AI speed: Microsoft’s new multi-model agentic security system tops leading industry benchmark
+
+- URL: not recorded in local PDF metadata; source identified as Microsoft Security Blog from document title/content.
+- Author: Taesoo Kim
+- Published: 2026-05-12
+- Retrieved / archived locally: 2026-05-13
+- Type: Microsoft Security Blog article / Safari-generated PDF archive
+- Local PDF filename: `Defense at AI speed- Microsoft’s new multi-model agentic security system tops leading industry benchmark | Microsoft Security Blog.pdf`
+- SHA-256: `ca8f44fd61fa7d503abb7768f343075b04eb1ffe88ccb67122649c506b34c1ea`
+- Related note: `knowledge/ai-security/2026-05-13-mdash-oh-my-secuaudit-comparison.md`
+- Why it matters: Microsoft MDASH의 multi-model agentic vulnerability discovery pipeline을 Oh my secuaudit의 reproducible security audit workflow와 비교할 수 있는 기준점을 제공함.
+- Copyright / storage note: PDF 원문은 repository에 commit하지 않음. 공개 가능한 요약과 비교 노트만 보관.
 
 ## Entry Template
 
