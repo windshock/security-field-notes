@@ -28,6 +28,16 @@
 - [ ] 블로그: "Event Log 수집과 ETW trace session 생성의 차이"
 - [ ] LinkedIn 요약: "Agentless EDR이라는 표현이 오해를 부르는 이유"
 - [ ] 내부 보고서 초안: "PLA/DCOM 기반 원격 telemetry와 탐지 사각지대"
+- [ ] 블로그: "MDASH와 Oh my secuaudit: 대규모 AI 취약점 발굴 공장과 재현 가능한 보안감사 운영체계"
+- [ ] LinkedIn 요약: "모델이 아니라 harness가 제품이다: MDASH가 보안감사 자동화에 주는 교훈"
+
+## Oh my secuaudit Follow-ups
+
+- [ ] README에 `Finder → Skeptic → Prover → Reporter` 역할 모델 추가
+- [ ] `sec-cluster` 문서에 `cluster`, `family`, `root-cause dedup`의 차이 명시
+- [ ] finding schema 또는 metadata에 proof status enum 추가
+- [ ] 과거 직접 분석한 취약점 case를 regression set으로 정리
+- [ ] MDASH 비교 노트를 바탕으로 Oh my secuaudit positioning 문서 작성
 
 ## Repo Maintenance
 
