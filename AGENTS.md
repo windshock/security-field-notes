@@ -20,10 +20,12 @@
 | 폴더 | 들어가는 것 |
 |---|---|
 | `knowledge/<platform>/` | 외부 자료의 요약, 해석, 정리 노트. 1차 자료에 가까운 정리. |
+| `knowledge/concepts/` | 반복 등장하는 핵심 기술/프로토콜/공격 기법에 대한 **영구적 컨셉 페이지**. 개별 아티클 요약이 아닌, 여러 노트의 증류물. 구조는 §11 참고. |
 | `detections/<platform>/` | 탐지 가설, 룰 후보, Sigma/KQL/YARA 초안. |
 | `experiments/` | 실험 계획, 절차, 관찰 결과. 날짜 기반. |
 | `references/` | 외부 자료의 메타데이터 인덱스. 원문 PDF는 올리지 않음. |
 | `templates/` | 반복 사용 템플릿. 새 노트 작성 시 참고. |
+| `plan/` | 저장소 구조/지식 베이스 개선 계획 working doc. 노트가 아니라 메타 작업물. 작업 완료 후에도 history로 남김. |
 
 `<platform>`은 현재 `windows`. 새 플랫폼이 필요하면 같은 레벨에 폴더 추가 (`linux`, `macos`, `network`, `cloud` 등).
 
@@ -139,8 +141,42 @@ Expand README with repository structure and purpose
 - [ ] `references/README.md`에 인덱스 한 줄과 상세 블록이 추가되었는가
 - [ ] PDF 원문이나 저작권 자료가 staging에 포함되지 않았는가
 - [ ] 새 가설/실험 후보가 `TODO.md`, `detections/`, `experiments/`에 흘러갔는가
+- [ ] **관련 기존 노트를 찾아 연결하고(Linking), 관련 Concept 페이지를 갱신했는가(Distillation)**
 - [ ] commit 메시지가 §6 스타일을 따르는가
 
 ## 9. 이 문서의 갱신
 
 저장소 구조나 노트 포맷이 바뀌면 이 문서를 먼저 갱신합니다. 규칙이 흔들리면 일관성이 깨지고, AI agent가 매번 다른 결과를 만듭니다.
+
+## 10. Knowledge Synthesis Rules
+
+새 자료를 추가하거나 정리할 때, 단순 요약을 넘어 다음을 수행합니다.
+
+1. **연결 (Linking)**: 관련 있는 기존 노트를 **최소 3개** 찾아 연결합니다.
+   - 관련 노트가 3개 미만일 경우, 찾은 것만 연결하거나 `Related notes: none found yet`으로 기록합니다.
+   - 억지스럽거나 관련성이 낮은 연결은 지양합니다.
+2. **증류 (Distillation)**: 개별 리서치 노트의 핵심 내용을 관련 `knowledge/concepts/` 페이지에 반영합니다.
+3. **제안 (Proposal)**: 새 컨셉 페이지가 필요하다고 판단되면, 즉시 생성하기보다 사용자에게 먼저 제안하여 중복을 방지합니다.
+4. **상태 관리**: 확실하지 않은 정보는 `hypothesis`, `needs-validation` 등으로 명시하여 지식의 신뢰도를 관리합니다.
+
+## 11. Concept Page 구조
+
+`knowledge/concepts/` 아래의 파일은 다음 구조를 권장합니다.
+
+```markdown
+# 개념 이름
+
+Status: evolving / stable
+Type: Technical Concept
+Last reviewed: YYYY-MM-DD
+
+## Short Definition
+## Why It Matters
+## Offensive Use
+## Defensive Use
+## Detection Surface
+## Conflicts / Tensions (모순점이나 논쟁 사항)
+## Open Questions (남겨진 숙제)
+## Related Notes
+## Related Detections
+```

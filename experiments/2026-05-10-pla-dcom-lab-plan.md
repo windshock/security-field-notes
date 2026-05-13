@@ -2,7 +2,7 @@
 
 Date: 2026-05-10  
 Status: planned  
-Related note: `knowledge/windows/2026-05-10-pla-dcom-agentless-edr.md`
+Related note: `knowledge/windows/2026-05-10-pla-dcom-agentless-edr.md`, `knowledge/concepts/pla.md`, `knowledge/concepts/dcom.md`
 
 ## Goal
 
