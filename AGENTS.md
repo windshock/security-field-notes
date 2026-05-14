@@ -28,7 +28,7 @@
 | `templates/` | 반복 사용 템플릿. 새 노트 작성 시 참고. |
 | `plan/` | 저장소 구조/지식 베이스 개선 계획 working doc. 노트가 아니라 메타 작업물. 작업 완료 후에도 history로 남김. |
 
-`<platform>`은 현재 `windows`. 새 플랫폼이 필요하면 같은 레벨에 폴더 추가 (`linux`, `macos`, `network`, `cloud` 등).
+`<platform>`은 현재 `windows`, `linux`, `ai-security`, `code-analysis`가 사용 중. 새 플랫폼이 필요하면 같은 레벨에 폴더 추가 (`macos`, `network`, `cloud` 등). **새 platform 폴더를 만들면 이 목록과 `README.md` Repository Structure 트리를 함께 갱신합니다 (§8 체크리스트).**
 
 분류가 애매하면 `knowledge/` 아래에 두고 `Status: inbox`로 표시합니다. 나중에 옮길 수 있습니다.
 

@@ -20,10 +20,13 @@ Security research notes, TODOs, references, and detection hypotheses.
 ├── TODO.md                         # 전체 backlog와 다음 작업
 ├── knowledge/                      # 주제별 정리 노트
 │   ├── concepts/                   # 반복 등장하는 기술/프로토콜의 영구 컨셉 페이지
-│   └── windows/                    # Windows internals, ETW, DCOM, logging
+│   ├── windows/                    # Windows internals, ETW, DCOM, logging
+│   ├── linux/                      # Linux kernel, page cache, live patch
+│   ├── ai-security/                # AI-enabled attack ops, AI agent risk, LLM 악성코드
+│   └── code-analysis/              # LSP, source code indexing, SAST/fuzzing 비교
 ├── references/                     # 외부 자료 메타데이터와 링크
 ├── experiments/                    # 실험 계획, 재현 로그, 결과
-├── detections/                     # 탐지 아이디어, Sigma/KQL/YARA 후보
+├── detections/                     # 탐지 아이디어, Sigma/KQL/YARA 후보 (windows/linux/ai-security 등)
 └── templates/                      # 반복 사용 템플릿
 ```
 
