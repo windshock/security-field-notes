@@ -59,6 +59,16 @@ Source: <저자>, "<제목>", <매체>, <발행일>
 
 본문은 `templates/research-note-template.md`의 10개 섹션을 기본으로 하되, 자료 성격에 따라 가감할 수 있습니다. 한국어 서술 + 영어 기술 용어 혼용이 표준입니다.
 
+**Source 필드 패턴**: 노트의 출처 성격에 따라 다음 셋 중 하나를 사용합니다.
+
+| 성격 | 형식 | 예 |
+|---|---|---|
+| 외부 자료 1차 정리 | `Source: <저자>, "<제목>", <매체>, <발행일>` | `Source: Jonathan Johnson, "No Agent, No Problem: Discovering Remote EDR", Medium, 2025-06-06` |
+| 외부 자료 + 합성 | `Source: <외부 인용>; <synthesis 출처>, <synthesis 날짜>` (세미콜론으로 결합) | `Source: GTIG, "GTIG AI Threat Tracker: ...", Google Cloud Blog, 2026-05-12; windshock / ChatGPT discussion notes, 2026-05-14` |
+| 합성/대화 중심 | `Source: <대화 정리 출처>, "<논의 주제>", <날짜>` 또는 `Source: Conversation synthesis based on public references: <reference list>` | `Source: windshock / ChatGPT conversation synthesis, "LSP and Sourcegraph for large-scale security analysis", 2026-05-13` |
+
+합성 노트라도 인용한 외부 link는 `references/README.md`에 별도 entry로 등록합니다 (§5).
+
 ### 4.2 detection 노트
 
 ```markdown
