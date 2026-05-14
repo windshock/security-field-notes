@@ -177,6 +177,8 @@ Expand README with repository structure and purpose
    - 억지스럽거나 관련성이 낮은 연결은 지양합니다.
 2. **증류 (Distillation)**: 개별 리서치 노트의 핵심 내용을 관련 `knowledge/concepts/` 페이지에 반영합니다.
 3. **제안 (Proposal)**: 새 컨셉 페이지가 필요하다고 판단되면, 즉시 생성하기보다 사용자에게 먼저 제안하여 중복을 방지합니다.
+   - **생성 임계점**: 같은 주제로 knowledge note 3개 이상, 또는 knowledge note 2개 + detection/experiment 1개 이상이 쌓였을 때만 페이지 생성을 제안합니다. 임계점 미달 후보는 `LLM_CONTEXT.md`의 Concept page candidates에 한 줄 candidate로만 유지합니다.
+   - 임계점 미달 상태에서 이미 만든 컨셉 페이지(현재 `etw`, `pla`, `dcom`)는 `Status: evolving`으로 두고 노트 누적과 함께 채워 나갑니다. grandfather 처리.
 4. **상태 관리**: 확실하지 않은 정보는 `hypothesis`, `needs-validation` 등으로 명시하여 지식의 신뢰도를 관리합니다.
 
 ## 11. Concept Page 구조
