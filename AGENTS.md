@@ -13,7 +13,8 @@
 3. 새 가설이나 검증이 필요한 항목이 있으면 `TODO.md`의 적절한 섹션(Inbox / Detection Ideas / Writing Ideas)에 항목 추가
 4. 탐지 아이디어가 있으면 `detections/<platform>/` 아래 별도 노트 작성, `Status: hypothesis`로 시작
 5. 실험이 필요한 항목이 있으면 `experiments/` 아래 실험 계획 노트 작성, `Status: planned`로 시작
-6. commit (§5 스타일)
+6. 관련 `knowledge/concepts/` 페이지가 있으면 핵심 내용을 반영(Related Notes, Detection Surface, Open Questions). 없고 반복 가능성이 높은 개념이면 새 concept page 생성을 사용자에게 먼저 제안 (§10)
+7. commit (§6 스타일)
 
 ## 2. 폴더 선택 규칙
 
