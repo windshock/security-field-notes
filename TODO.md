@@ -16,6 +16,9 @@
 - [ ] `rfxn/copyfail`의 `copyfail-local-check --json` 결과를 SIEM에 넣을 수 있는 형태로 샘플링하기
 - [ ] Rocky 8/9에서 `O_DIRECT` 기반 page-cache integrity check가 ext4/xfs에서 안정적으로 동작하는지 확인하기
 - [ ] `fanotify` 기반 setuid 실행 직전 검증/차단 PoC 가능성 조사하기
+- [ ] GTIG AI Threat Tracker의 Figure 3을 바탕으로 SAST / fuzzing / LLM / human review의 역할 비교표 작성하기
+- [ ] LLM-assisted semantic logic flaw 탐색용 방어 prompt와 검증 workflow 설계하기
+- [ ] AI agent / skill / connector dependency supply chain checklist를 별도 문서로 분리하기
 
 ## Detection Ideas
 
@@ -30,6 +33,10 @@
 - [ ] setuid binary 실행 직후 shell 실행 chain 탐지
 - [ ] cached read hash와 `O_DIRECT` read hash divergence 탐지
 - [ ] `drop_caches` 호출과 privilege escalation 의심 이벤트 상관분석
+- [ ] LLM/API call 이후 file write와 interpreter execution이 이어지는 Dynamic Modification sequence 탐지
+- [ ] LLM-generated decoy logic 후보를 code-size growth / dead branch / irrelevant helper code 기준으로 탐지 가능성 검토
+- [ ] Accessibility tree 또는 UI hierarchy가 외부 모델로 전송되고 JSON action으로 CLICK/SWIPE가 수행되는 agentic malware loop 탐지
+- [ ] AI gateway / relay service / account pooling 인프라와 비정상 egress 탐지
 
 ## Writing Ideas
 
@@ -41,6 +48,9 @@
 - [ ] LinkedIn 요약: "모델이 아니라 harness가 제품이다: MDASH가 보안감사 자동화에 주는 교훈"
 - [ ] 블로그: "커널 취약점 대응에서 live patch는 합법적 후킹인가?"
 - [ ] LinkedIn 요약: "Copy Fail과 page-cache integrity detection: 파일은 정상인데 cache가 거짓말할 때"
+- [ ] 블로그: "AI 악성코드의 진짜 변화: 코드를 생성하는 AI에서, 공격을 운영하는 AI로"
+- [ ] 블로그: "폴리모픽 악성코드 이후의 시대: AI가 변형 엔진이 될 때"
+- [ ] LinkedIn 요약: "AI로 다 되는가? Figure 3이 보여주는 취약점 탐색의 역할 분담"
 
 ## Oh my secuaudit Follow-ups
 
@@ -49,6 +59,15 @@
 - [ ] finding schema 또는 metadata에 proof status enum 추가
 - [ ] 과거 직접 분석한 취약점 case를 regression set으로 정리
 - [ ] MDASH 비교 노트를 바탕으로 Oh my secuaudit positioning 문서 작성
+
+## AI Security Follow-ups
+
+- [ ] `knowledge/concepts/ai-enabled-dynamic-modification.md` concept page 생성 여부 결정
+- [ ] `knowledge/concepts/llm-assisted-vulnerability-discovery.md` concept page 생성 여부 결정
+- [ ] `knowledge/concepts/ai-agent-supply-chain-risk.md` concept page 생성 여부 결정
+- [ ] `detections/ai-security/llm-enabled-dynamic-modification.md`를 Sigma/KQL 초안으로 확장
+- [ ] benign toy harness로 `external generation service → local rewrite → execution` telemetry 수집
+- [ ] 정상 AI coding assistant / CI code generation과 악성 Dynamic Modification의 false positive 경계 정리
 
 ## Repo Maintenance
 
