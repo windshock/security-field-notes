@@ -1,7 +1,7 @@
 # Oh my secuaudit: Skills를 넘어 Evidence-first Agent Runtime으로
 
 Date: 2026-05-13  
-Category: AI / Agentic Security Audit / Architecture Notes  
+Category: AI Security / Agentic Security Audit / Architecture Notes  
 Status: draft / architecture hypothesis  
 Source: ChatGPT 대화 정리, "LangGraph, Skills, MCP, OpenClaw, oh-my-secuaudit 구조 논의", 2026-05-13
 
