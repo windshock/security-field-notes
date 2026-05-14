@@ -29,10 +29,10 @@
 - [MDASH and Oh my secuaudit comparison](knowledge/ai-security/2026-05-13-mdash-oh-my-secuaudit-comparison.md): AI vulnerability discovery pipeline, agentic harness, evidence promotion, proof workflow
 - [LLM-enabled Dynamic Modification detection hypothesis](detections/ai-security/llm-enabled-dynamic-modification.md): 외부 generation service가 runtime executable behavior에 영향을 주는 sequence 탐지 가설
 
-Concept page candidates:
-- `knowledge/concepts/ai-enabled-dynamic-modification.md`
-- `knowledge/concepts/llm-assisted-vulnerability-discovery.md`
-- `knowledge/concepts/ai-agent-supply-chain-risk.md`
+Concept page candidates (AGENTS §10 임계점 도달 시 생성. 임계점: 노트 3+ 또는 노트 2+ + detection/experiment 1):
+- `ai-enabled-dynamic-modification` — 현재: note 1 (GTIG) + detection 1. **1 note 부족.**
+- `llm-assisted-vulnerability-discovery` — 현재: note 2 (GTIG, MDASH). **detection/experiment 1개 또는 note 1개 부족.**
+- `ai-agent-supply-chain-risk` — 현재: note 1~2 (GTIG, oh-my-secuaudit 부분 포함). **note 1~2개 부족.**
 
 ## Active Work & High-Priority TODOs
 - **Research**: PLA COM API 직접 호출과 `logman.exe` 호출의 아티팩트 차이 분석

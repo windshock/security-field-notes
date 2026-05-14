@@ -62,9 +62,8 @@
 
 ## AI Security Follow-ups
 
-- [ ] `knowledge/concepts/ai-enabled-dynamic-modification.md` concept page 생성 여부 결정
-- [ ] `knowledge/concepts/llm-assisted-vulnerability-discovery.md` concept page 생성 여부 결정
-- [ ] `knowledge/concepts/ai-agent-supply-chain-risk.md` concept page 생성 여부 결정
+컨셉 페이지 후보는 AGENTS §10 임계점(노트 3+ 또는 노트 2+ + detection/experiment 1)에 도달하면 자동으로 생성 후보가 됩니다. 현재 카운트는 `LLM_CONTEXT.md` Concept page candidates 참조.
+
 - [ ] `detections/ai-security/llm-enabled-dynamic-modification.md`를 Sigma/KQL 초안으로 확장
 - [ ] benign toy harness로 `external generation service → local rewrite → execution` telemetry 수집
 - [ ] 정상 AI coding assistant / CI code generation과 악성 Dynamic Modification의 false positive 경계 정리
