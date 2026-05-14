@@ -24,10 +24,22 @@
 ### 2. Linux Integrity & EDR
 - [Page Cache Integrity](detections/linux/page-cache-integrity-divergence.md): (Concept 페이지 승격 예정)
 
+### 3. AI Security / AI-Enabled Attack Operations
+- [GTIG AI Threat Tracker field note](knowledge/ai-security/2026-05-14-gtig-ai-threat-tracker-ai-enabled-attack-operations.md): AI-enabled attack operations, Dynamic Modification, Figure 3의 취약점 탐색 역할 분담, PROMPTSPY/PROMPTFLUX/HONESTCUE/CANFAIL/LONGSTREAM 해석
+- [MDASH and Oh my secuaudit comparison](knowledge/ai-security/2026-05-13-mdash-oh-my-secuaudit-comparison.md): AI vulnerability discovery pipeline, agentic harness, evidence promotion, proof workflow
+- [LLM-enabled Dynamic Modification detection hypothesis](detections/ai-security/llm-enabled-dynamic-modification.md): 외부 generation service가 runtime executable behavior에 영향을 주는 sequence 탐지 가설
+
+Concept page candidates:
+- `knowledge/concepts/ai-enabled-dynamic-modification.md`
+- `knowledge/concepts/llm-assisted-vulnerability-discovery.md`
+- `knowledge/concepts/ai-agent-supply-chain-risk.md`
+
 ## Active Work & High-Priority TODOs
 - **Research**: PLA COM API 직접 호출과 `logman.exe` 호출의 아티팩트 차이 분석
 - **Detection**: ETW session tampering 탐지 룰 고도화
 - **Experiment**: PLA/DCOM 원격 수집 실험 수행 (Windows Lab)
+- **AI Security Research**: GTIG Figure 3을 바탕으로 SAST / fuzzing / LLM / human review의 역할 비교표 작성
+- **AI Security Detection**: LLM/API call 이후 file write와 interpreter execution이 이어지는 Dynamic Modification sequence 탐지 가설 검증
 
 ## Active Open Questions
 
@@ -42,6 +54,9 @@
 - [DCOM](knowledge/concepts/dcom.md#open-questions)
   - PLA 관련 DCOM 인터페이스의 RPC UUID inventory가 탐지 정확도를 얼마나 높이는가?
   - DCOM authentication 레벨 차이가 PLA 원격 조작 시 어떤 흔적 차이로 나타나는가?
+- [AI-enabled Dynamic Modification](detections/ai-security/llm-enabled-dynamic-modification.md#status-notes)
+  - 탐지면을 특정 AI provider/model endpoint 기준으로 잡을 것인가, 아니면 `external generation service influences executable behavior at runtime`이라는 행위 불변성 기준으로 잡을 것인가?
+  - 정상 AI coding assistant / CI code generation과 악성 Dynamic Modification의 false positive 경계를 어떻게 줄일 것인가?
 
 ## Maintenance Rules (Quick Ref)
 - **Linking**: 새 노드 추가 시 최소 3개의 기존 노드 연결 (`AGENTS.md §10`)
