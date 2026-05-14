@@ -2,7 +2,8 @@
 
 Status: hypothesis
 Category: linux / kernel / detection-engineering
-Related note: `knowledge/linux/2026-05-13-copyfail-livepatch-rocky-defense-notes.md`
+Related notes:
+- `knowledge/linux/2026-05-13-copyfail-livepatch-rocky-defense-notes.md`
 
 ## Intent
 

@@ -66,7 +66,9 @@ Source: <저자>, "<제목>", <매체>, <발행일>
 
 Status: hypothesis / lab-tested / production-candidate / deprecated
 Category: <플랫폼> / <서브토픽> / <성격>
-Related note: <knowledge 노트 경로>
+Related notes:
+- `knowledge/<...>.md`
+- `knowledge/concepts/<...>.md`
 
 ## Intent
 ## Data Sources
@@ -78,6 +80,8 @@ Related note: <knowledge 노트 경로>
 ## Status Notes
 ```
 
+`Related notes:`는 §10 Linking Rule(≥3)을 따릅니다. 3개 미만일 경우 escape hatch 적용.
+
 검증 전 룰은 반드시 `Status: hypothesis`로 시작하고, production-ready로 단정하지 않습니다.
 
 ### 4.3 experiment 노트
@@ -87,7 +91,9 @@ Related note: <knowledge 노트 경로>
 
 Date: YYYY-MM-DD
 Status: planned / running / observed / inconclusive / validated / rejected
-Related note: <knowledge 노트 경로>
+Related notes:
+- `knowledge/<...>.md`
+- `knowledge/concepts/<...>.md`
 
 ## Goal
 ## Scope
