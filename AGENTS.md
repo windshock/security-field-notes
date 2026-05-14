@@ -112,6 +112,7 @@ Related notes:
 - 자료별 상세 블록 (URL, Author, Published, Retrieved, Type, Local PDF filename, SHA-256, Related note, Why it matters)을 같은 파일 하단에 추가
 - PDF 자체는 repo에 commit하지 않음. 로컬 파일명과 SHA-256만 기록
 - 원문 URL이 사라질 수 있는 자료는 별도 private archive에 보관하고, 이곳에는 메타데이터만 남김
+- **URL 필드**: 로컬 PDF 메타데이터에 URL이 없어도 `not recorded`로 두지 않습니다. 제목 + 저자/매체로 검색해 원문 URL을 찾아 채웁니다. 검색해도 확인 불가능한 경우에만 시도 기록과 함께 비워둘 수 있습니다.
 
 ## 6. Commit 메시지 스타일
 
@@ -146,9 +147,11 @@ Expand README with repository structure and purpose
 - [ ] 폴더와 파일명이 §2, §3 규칙을 따르는가
 - [ ] 노트 상단 메타 4줄(Date / Category / Status / Source)이 있는가
 - [ ] `references/README.md`에 인덱스 한 줄과 상세 블록이 추가되었는가
+- [ ] `references/README.md`의 URL 필드가 채워져 있는가 (PDF 메타데이터에 없으면 검색해서 채움, §5 참고)
 - [ ] PDF 원문이나 저작권 자료가 staging에 포함되지 않았는가
 - [ ] 새 가설/실험 후보가 `TODO.md`, `detections/`, `experiments/`에 흘러갔는가
 - [ ] **관련 기존 노트를 찾아 연결하고(Linking), 관련 Concept 페이지를 갱신했는가(Distillation)**
+- [ ] 새 platform 폴더(`knowledge/<X>/` 또는 `detections/<X>/`)를 만들었다면 AGENTS.md §2 platform 목록과 `README.md` Repository Structure 트리에 반영했는가
 - [ ] commit 메시지가 §6 스타일을 따르는가
 
 ## 9. 이 문서의 갱신
