@@ -16,7 +16,7 @@ Public repository에서는 저작권이 있는 PDF 원문을 직접 저장할 �
 
 ## GTIG AI Threat Tracker: Adversaries Leverage AI for Vulnerability Exploitation, Augmented Operations, and Initial Access
 
-- URL: not recorded in local PDF metadata; source identified as Google Cloud Blog from document title/content.
+- URL: https://cloud.google.com/blog/topics/threat-intelligence/ai-vulnerability-exploitation-initial-access
 - Author: Google Threat Intelligence Group
 - Published: 2026-05-12
 - Retrieved / archived locally: 2026-05-14
@@ -58,7 +58,7 @@ Public repository에서는 저작권이 있는 PDF 원문을 직접 저장할 �
 
 ## Defense at AI speed: Microsoft’s new multi-model agentic security system tops leading industry benchmark
 
-- URL: not recorded in local PDF metadata; source identified as Microsoft Security Blog from document title/content.
+- URL: https://www.microsoft.com/en-us/security/blog/2026/05/12/defense-at-ai-speed-microsofts-new-multi-model-agentic-security-system-tops-leading-industry-benchmark/
 - Author: Taesoo Kim
 - Published: 2026-05-12
 - Retrieved / archived locally: 2026-05-13
