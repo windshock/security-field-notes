@@ -59,6 +59,14 @@
 - [ ] finding schema 또는 metadata에 proof status enum 추가
 - [ ] 과거 직접 분석한 취약점 case를 regression set으로 정리
 - [ ] MDASH 비교 노트를 바탕으로 Oh my secuaudit positioning 문서 작성
+- [ ] `AGENT_REGISTRY.yaml` 초안 작성: agent description, role, allowed outputs, forbidden outputs, risk budget 포함
+- [ ] `MCP_TOOL_REGISTRY.yaml` 초안 작성: tool description, tags, input/output schema, risk level 포함
+- [ ] Agent-Tool Matching PoC 작성: agent description과 MCP tool description을 embedding/LLM으로 매칭
+- [ ] Tool Binding Manifest 초안 작성: 추천 tool, rejected tool, policy rejection reason 포함
+- [ ] Tool Factory PoC 작성: `create_toolset(agent_role, policy_profile, backends)` 형태
+- [ ] `/audit/stream` event model 설계: status/tool_start/artifact/evidence/verifier/done 이벤트 분리
+- [ ] simulation lab의 `scenario_id / audit_id / thread_id` 규칙을 별도 설계 문서로 분리
+- [ ] `toy-java-sqli` simulation lab과 `expected_findings.yaml` regression fixture 작성
 
 ## AI Security Follow-ups
 
