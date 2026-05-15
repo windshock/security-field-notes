@@ -21,8 +21,10 @@
 - [PLA](knowledge/concepts/pla.md): 원격 수집 및 제어 메커니즘
 - [DCOM](knowledge/concepts/dcom.md): 원격 제어를 위한 통신 프로토콜
 
-### 2. Linux Integrity & EDR
+### 2. Linux Integrity, Rootkit, and EDR
 - [Page Cache Integrity](detections/linux/page-cache-integrity-divergence.md): (Concept 페이지 승격 예정)
+- [OrBit / Medusa rootkit reuse field note](knowledge/linux/2026-05-15-orbit-medusa-rootkit-reuse-and-evolution.md): 공개/반공개 Linux rootkit 코드베이스 재사용, Lineage A/B, build option 기반 기능 변화, rootkit primitive 성숙과 platform 이동
+- [OrBit / Medusa invariant detection hypothesis](detections/linux/orbit-medusa-rootkit-invariants.md): hash/path/credential보다 build pipeline invariant, filesystem skeleton, XOR string table, nested ELF, runtime divergence 중심 탐지 가설
 
 ### 3. AI Security / AI-Enabled Attack Operations
 - [GTIG AI Threat Tracker field note](knowledge/ai-security/2026-05-14-gtig-ai-threat-tracker-ai-enabled-attack-operations.md): AI-enabled attack operations, Dynamic Modification, Figure 3의 취약점 탐색 역할 분담, PROMPTSPY/PROMPTFLUX/HONESTCUE/CANFAIL/LONGSTREAM 해석
@@ -33,6 +35,8 @@ Concept page candidates (AGENTS §10 임계점 도달 시 생성. 임계점: 노
 - `ai-enabled-dynamic-modification` — 현재: note 1 (GTIG) + detection 1. **1 note 부족.**
 - `llm-assisted-vulnerability-discovery` — 현재: note 2 (GTIG, MDASH). **detection/experiment 1개 또는 note 1개 부족.**
 - `ai-agent-supply-chain-risk` — 현재: note 1~2 (GTIG, oh-my-secuaudit 부분 포함). **note 1~2개 부족.**
+- `linux-rootkit-reuse-and-hook-surface` — 현재: note 1 (OrBit/Medusa) + detection 1. **1 note 부족.**
+- `linux-runtime-view-divergence` — 현재: note 2 (Copy Fail/page cache, OrBit/Medusa) + detection 2. Concept 후보이나 page-cache와 rootkit을 함께 묶을지 분리할지 추가 검토 필요.
 
 ## Active Work & High-Priority TODOs
 - **Research**: PLA COM API 직접 호출과 `logman.exe` 호출의 아티팩트 차이 분석
@@ -40,6 +44,8 @@ Concept page candidates (AGENTS §10 임계점 도달 시 생성. 임계점: 노
 - **Experiment**: PLA/DCOM 원격 수집 실험 수행 (Windows Lab)
 - **AI Security Research**: GTIG Figure 3을 바탕으로 SAST / fuzzing / LLM / human review의 역할 비교표 작성
 - **AI Security Detection**: LLM/API call 이후 file write와 interpreter execution이 이어지는 Dynamic Modification sequence 탐지 가설 검증
+- **Linux Rootkit Research**: 공개 Linux rootkit repository를 기능별 hook surface로 분류하고 Medusa/OrBit 계열 invariant를 정적 탐지 가설로 발전
+- **Linux Rootkit Detection**: `/etc/ld.so.preload`, suspicious `.so`, hook-like export set, filesystem skeleton, nested ELF, runtime view divergence를 조합한 scoring rule 설계
 
 ## Active Open Questions
 
@@ -57,6 +63,9 @@ Concept page candidates (AGENTS §10 임계점 도달 시 생성. 임계점: 노
 - [AI-enabled Dynamic Modification](detections/ai-security/llm-enabled-dynamic-modification.md#status-notes)
   - 탐지면을 특정 AI provider/model endpoint 기준으로 잡을 것인가, 아니면 `external generation service influences executable behavior at runtime`이라는 행위 불변성 기준으로 잡을 것인가?
   - 정상 AI coding assistant / CI code generation과 악성 Dynamic Modification의 false positive 경계를 어떻게 줄일 것인가?
+- [OrBit / Medusa invariant detection](detections/linux/orbit-medusa-rootkit-invariants.md#status-notes)
+  - Medusa/OrBit 계열 탐지를 path/hash 중심이 아닌 invariant scoring model로 만들 때 false positive 기준을 어떻게 잡을 것인가?
+  - `linux-rootkit-reuse-and-hook-surface`를 별도 concept page로 승격할지, `linux-runtime-view-divergence`와 통합할지 결정 필요.
 
 ## Maintenance Rules (Quick Ref)
 - **Linking**: 새 노드 추가 시 최소 3개의 기존 노드 연결 (`AGENTS.md §10`)
