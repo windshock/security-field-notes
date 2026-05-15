@@ -19,6 +19,9 @@
 - [ ] GTIG AI Threat Tracker의 Figure 3을 바탕으로 SAST / fuzzing / LLM / human review의 역할 비교표 작성하기
 - [ ] LLM-assisted semantic logic flaw 탐색용 방어 prompt와 검증 workflow 설계하기
 - [ ] AI agent / skill / connector dependency supply chain checklist를 별도 문서로 분리하기
+- [ ] 공개 Linux rootkit repository를 기능별 hook surface로 분류하기
+- [ ] Medusa default build와 `rknet.c` 포함 build의 static fingerprint 차이를 isolated lab에서 비교하기
+- [ ] eBPF / io_uring / UEFI / cloud rootkit 계열을 Linux rootkit primitive taxonomy에 매핑하기
 
 ## Detection Ideas
 
@@ -37,6 +40,10 @@
 - [ ] LLM-generated decoy logic 후보를 code-size growth / dead branch / irrelevant helper code 기준으로 탐지 가능성 검토
 - [ ] Accessibility tree 또는 UI hierarchy가 외부 모델로 전송되고 JSON action으로 CLICK/SWIPE가 수행되는 agentic malware loop 탐지
 - [ ] AI gateway / relay service / account pooling 인프라와 비정상 egress 탐지
+- [ ] Medusa/OrBit 계열 XOR string table을 key-independent threshold YARA 후보로 설계하기
+- [ ] Nested ELF + rootkit-specific inner fingerprint 조합의 false positive 측정하기
+- [ ] `/etc/ld.so.preload` 변경, suspicious `.so`, hook-like export set, filesystem skeleton을 조합한 Linux rootkit scoring rule 설계하기
+- [ ] `/proc` view와 network/host telemetry 불일치를 이용한 userland rootkit runtime divergence 탐지 검토하기
 
 ## Writing Ideas
 
@@ -51,6 +58,8 @@
 - [ ] 블로그: "AI 악성코드의 진짜 변화: 코드를 생성하는 AI에서, 공격을 운영하는 AI로"
 - [ ] 블로그: "폴리모픽 악성코드 이후의 시대: AI가 변형 엔진이 될 때"
 - [ ] LinkedIn 요약: "AI로 다 되는가? Figure 3이 보여주는 취약점 탐색의 역할 분담"
+- [ ] 블로그: "루트킷 기술은 정체됐는가? 오래된 primitive와 새로운 platform의 이동"
+- [ ] LinkedIn 요약: "OrBit/Medusa가 보여준 공개 루트킷 재사용의 현실"
 
 ## Oh my secuaudit Follow-ups
 
