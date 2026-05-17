@@ -29,12 +29,15 @@
 ### 3. AI Security / AI-Enabled Attack Operations
 - [GTIG AI Threat Tracker field note](knowledge/ai-security/2026-05-14-gtig-ai-threat-tracker-ai-enabled-attack-operations.md): AI-enabled attack operations, Dynamic Modification, Figure 3의 취약점 탐색 역할 분담, PROMPTSPY/PROMPTFLUX/HONESTCUE/CANFAIL/LONGSTREAM 해석
 - [MDASH and Oh my secuaudit comparison](knowledge/ai-security/2026-05-13-mdash-oh-my-secuaudit-comparison.md): AI vulnerability discovery pipeline, agentic harness, evidence promotion, proof workflow
+- [ExploitGym methodology critique](knowledge/ai-security/2026-05-17-exploitgym-benchmark-methodology-harness-control.md): AI agent exploit benchmark에서 model capability와 native agent scaffold, tool interface, process prompt, debugging environment, safety/refusal behavior가 섞이는 문제와 neutral harness track 제안
+- [ExploitGym neutral harness experiment plan](experiments/2026-05-17-exploitgym-neutral-harness-comparison.md): third-party pre-registered agent stack, MCP/tool registry, debugging/logging policy, process prompt를 고정한 comparison track 설계
 - [LLM-enabled Dynamic Modification detection hypothesis](detections/ai-security/llm-enabled-dynamic-modification.md): 외부 generation service가 runtime executable behavior에 영향을 주는 sequence 탐지 가설
 
 Concept page candidates (AGENTS §10 임계점 도달 시 생성. 임계점: 노트 3+ 또는 노트 2+ + detection/experiment 1):
+- `llm-assisted-vulnerability-discovery` — 현재: note 3 (GTIG, MDASH, ExploitGym) + experiment 1. **임계점 도달. Concept page 생성 검토 필요.**
 - `ai-enabled-dynamic-modification` — 현재: note 1 (GTIG) + detection 1. **1 note 부족.**
-- `llm-assisted-vulnerability-discovery` — 현재: note 2 (GTIG, MDASH). **detection/experiment 1개 또는 note 1개 부족.**
 - `ai-agent-supply-chain-risk` — 현재: note 1~2 (GTIG, oh-my-secuaudit 부분 포함). **note 1~2개 부족.**
+- `ai-security-benchmark-harness` — 현재: note 2 (MDASH, ExploitGym) + experiment 1. **임계점 도달 후보. llm-assisted-vulnerability-discovery와 분리할지 검토 필요.**
 - `linux-rootkit-reuse-and-hook-surface` — 현재: note 1 (OrBit/Medusa) + detection 1. **1 note 부족.**
 - `linux-runtime-view-divergence` — 현재: note 2 (Copy Fail/page cache, OrBit/Medusa) + detection 2. Concept 후보이나 page-cache와 rootkit을 함께 묶을지 분리할지 추가 검토 필요.
 
@@ -43,6 +46,8 @@ Concept page candidates (AGENTS §10 임계점 도달 시 생성. 임계점: 노
 - **Detection**: ETW session tampering 탐지 룰 고도화
 - **Experiment**: PLA/DCOM 원격 수집 실험 수행 (Windows Lab)
 - **AI Security Research**: GTIG Figure 3을 바탕으로 SAST / fuzzing / LLM / human review의 역할 비교표 작성
+- **AI Security Research**: ExploitGym / MDASH / GTIG를 연결해 `llm-assisted-vulnerability-discovery` 또는 `ai-security-benchmark-harness` concept page 생성 여부 검토
+- **AI Security Benchmarking**: model / agent / skill prompt / MCP tool binding / debugging environment / validation oracle를 분리하는 reporting schema 초안 작성
 - **AI Security Detection**: LLM/API call 이후 file write와 interpreter execution이 이어지는 Dynamic Modification sequence 탐지 가설 검증
 - **Linux Rootkit Research**: 공개 Linux rootkit repository를 기능별 hook surface로 분류하고 Medusa/OrBit 계열 invariant를 정적 탐지 가설로 발전
 - **Linux Rootkit Detection**: `/etc/ld.so.preload`, suspicious `.so`, hook-like export set, filesystem skeleton, nested ELF, runtime view divergence를 조합한 scoring rule 설계
@@ -63,6 +68,9 @@ Concept page candidates (AGENTS §10 임계점 도달 시 생성. 임계점: 노
 - [AI-enabled Dynamic Modification](detections/ai-security/llm-enabled-dynamic-modification.md#status-notes)
   - 탐지면을 특정 AI provider/model endpoint 기준으로 잡을 것인가, 아니면 `external generation service influences executable behavior at runtime`이라는 행위 불변성 기준으로 잡을 것인가?
   - 정상 AI coding assistant / CI code generation과 악성 Dynamic Modification의 false positive 경계를 어떻게 줄일 것인가?
+- [ExploitGym / benchmark harness attribution](knowledge/ai-security/2026-05-17-exploitgym-benchmark-methodology-harness-control.md#12-todo)
+  - AI security benchmark에서 model capability와 agent scaffold/tool/process/environment 효과를 어떻게 분리해 보고할 것인가?
+  - native deployed stack track과 common neutral harness track을 어떤 reporting schema로 병렬 제시할 것인가?
 - [OrBit / Medusa invariant detection](detections/linux/orbit-medusa-rootkit-invariants.md#status-notes)
   - Medusa/OrBit 계열 탐지를 path/hash 중심이 아닌 invariant scoring model로 만들 때 false positive 기준을 어떻게 잡을 것인가?
   - `linux-rootkit-reuse-and-hook-surface`를 별도 concept page로 승격할지, `linux-runtime-view-divergence`와 통합할지 결정 필요.
