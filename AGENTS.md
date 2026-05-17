@@ -14,7 +14,9 @@
 4. 탐지 아이디어가 있으면 `detections/<platform>/` 아래 별도 노트 작성, `Status: hypothesis`로 시작
 5. 실험이 필요한 항목이 있으면 `experiments/` 아래 실험 계획 노트 작성, `Status: planned`로 시작
 6. 관련 `knowledge/concepts/` 페이지가 있으면 핵심 내용을 반영(Related Notes, Detection Surface, Open Questions). 없고 반복 가능성이 높은 개념이면 새 concept page 생성을 사용자에게 먼저 제안 (§10)
-7. commit (§6 스타일)
+7. `VALUE_CRITERIA.md`, `CONVERSION_STATUS.md`, `DOWNSTREAM_TARGETS.md`, `IMPACT_ROUTER.md`를 확인해 다음 행동의 목적지를 정한다 (§12)
+8. 살아 있는 downstream target이 있으면 새 요약을 추가하기보다 해당 repo / blog / checklist / experiment로 라우팅한다
+9. commit (§6 스타일)
 
 ## 2. 폴더 선택 규칙
 
@@ -57,7 +59,17 @@ Status: 정리 노트 / 탐지 가설 / draft / reviewed
 Source: <저자>, "<제목>", <매체>, <발행일>
 ```
 
-본문은 `templates/research-note-template.md`의 10개 섹션을 기본으로 하되, 자료 성격에 따라 가감할 수 있습니다. 한국어 서술 + 영어 기술 용어 혼용이 표준입니다.
+본문은 `templates/research-note-template.md`의 11개 섹션을 기본으로 하되, 자료 성격에 따라 가감할 수 있습니다. 한국어 서술 + 영어 기술 용어 혼용이 표준입니다.
+
+반드시 `Conversion Target` 섹션에서 다음 목적지를 명시합니다.
+
+```yaml
+primary_route: security-field-notes / windshock.github.io / windshock/oh-my-secuaudit / security-hypothesis-lab / fortify_ml / templates / detections / experiments
+output_type: concept-page / detection-hypothesis / experiment / blog-post / checklist / issue / PR / tool-change / template
+best_next_action:
+not_recommended:
+reason:
+```
 
 **Source 필드 패턴**: 노트의 출처 성격에 따라 다음 셋 중 하나를 사용합니다.
 
@@ -161,6 +173,7 @@ Expand README with repository structure and purpose
 - [ ] PDF 원문이나 저작권 자료가 staging에 포함되지 않았는가
 - [ ] 새 가설/실험 후보가 `TODO.md`, `detections/`, `experiments/`에 흘러갔는가
 - [ ] **관련 기존 노트를 찾아 연결하고(Linking), 관련 Concept 페이지를 갱신했는가(Distillation)**
+- [ ] `Conversion Target`을 작성하고, `IMPACT_ROUTER.md` / `DOWNSTREAM_TARGETS.md` 기준으로 next action을 라우팅했는가
 - [ ] 새 platform 폴더(`knowledge/<X>/` 또는 `detections/<X>/`)를 만들었다면 AGENTS.md §2 platform 목록과 `README.md` Repository Structure 트리에 반영했는가
 - [ ] commit 메시지가 §6 스타일을 따르는가
 
@@ -201,4 +214,39 @@ Last reviewed: YYYY-MM-DD
 ## Open Questions (남겨진 숙제)
 ## Related Notes
 ## Related Detections
+```
+
+## 12. Impact Routing Rules
+
+이 저장소는 통찰의 종착지가 아니라 routing hub입니다. 새 노트나 작업 후보를 만들 때는 다음 문서를 함께 봅니다.
+
+- `VALUE_CRITERIA.md`: 이 주제가 본질적으로 가치 있는가?
+- `CONVERSION_STATUS.md`: 이미 blog / tool / checklist / experiment로 전환되었는가?
+- `DOWNSTREAM_TARGETS.md`: 살아 있는 실행 대상이 있는가?
+- `IMPACT_ROUTER.md`: 다음 행동을 어디로 라우팅해야 하는가?
+
+핵심 규칙:
+
+```text
+살아 있는 downstream target이 있으면,
+새 field note나 concept page보다 해당 target의 issue / PR / checklist / template / experiment를 우선한다.
+```
+
+예시:
+
+```yaml
+theme: Linux kernel maintenance context for AI security analysis
+value: high
+readiness: enough
+conversion_status: field-note only
+downstream_target: windshock/oh-my-secuaudit
+best_next_action: add maintenance skeleton PR
+not_recommended:
+  - another generic field memo
+  - blog-first conversion
+  - concept page before implementation
+reason:
+  - the note already proposes concrete repo structure
+  - oh-my-secuaudit is a live implementation target
+  - value is realized by changing the tool, not by summarizing again
 ```
