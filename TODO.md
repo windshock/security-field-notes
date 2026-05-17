@@ -25,6 +25,7 @@
 - [ ] ExploitGym류 benchmark를 읽을 때 `model vs scaffold vs environment` attribution checklist 적용하기
 - [ ] ExploitGym의 neutral harness design을 Oh my secuaudit의 `AGENT_REGISTRY.yaml` / `MCP_TOOL_REGISTRY.yaml` / Tool Binding Manifest와 연결하기
 - [ ] `llm-assisted-vulnerability-discovery` concept page 생성 여부 검토하기 (GTIG + MDASH + ExploitGym으로 임계점 도달)
+- [ ] Linux kernel식 subsystem / maintainer / ABI / mailing-list memory model을 AI security repository 운영 원칙으로 일반화하기
 
 ## Detection Ideas
 
@@ -65,6 +66,8 @@
 - [ ] LinkedIn 요약: "OrBit/Medusa가 보여준 공개 루트킷 재사용의 현실"
 - [ ] 블로그: "ExploitGym 방법론 비판: 모델 성능인가, agent harness 성능인가?"
 - [ ] LinkedIn 요약: "AI exploit benchmark를 모델 순위표로 읽으면 안 되는 이유"
+- [ ] 블로그: "Linux kernel이 AI agent에게 가르쳐주는 대규모 보안분석 저장소 운영법"
+- [ ] LinkedIn 요약: "문서가 아니라 흔적이다: 커널식 유지보수 구조와 AI 보안분석"
 
 ## Oh my secuaudit Follow-ups
 
@@ -82,6 +85,12 @@
 - [ ] simulation lab의 `scenario_id / audit_id / thread_id` 규칙을 별도 설계 문서로 분리
 - [ ] `toy-java-sqli` simulation lab과 `expected_findings.yaml` regression fixture 작성
 - [ ] ExploitGym neutral harness track 개념을 Oh my secuaudit benchmark mode에 반영하기
+- [ ] `MAINTAINERS.md` 추가: skill별 owner, scope, downstream consumer, review expectation 명시
+- [ ] `CONTRIBUTING.md` 추가: one logical change, contract impact, validation evidence, migration note 규칙 명시
+- [ ] `docs/contracts/` 추가: finding contract, reporting summary contract, architecture handoff contract, SPR contract를 ABI처럼 관리
+- [ ] `docs/decisions/` 추가: skill-as-subsystem, output-schema-as-ABI, architecture-review-as-maintainer ADR 작성
+- [ ] `.github/PULL_REQUEST_TEMPLATE.md`에 `Affected skills`, `Contract impact`, `Validation`, `Migration note` 섹션 추가
+- [ ] AI agent PR review 실험: contract break, missing evidence, downstream impact 탐지 품질 측정
 
 ## AI Security Follow-ups
 
