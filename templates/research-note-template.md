@@ -47,6 +47,18 @@ Source:
 - [ ] 가설 수준
 - [ ] 추가 검증 필요
 
-## 10. 참고 자료
+## 10. Conversion Target
+
+이 노트의 다음 목적지를 명시합니다. `IMPACT_ROUTER.md`와 `DOWNSTREAM_TARGETS.md`를 참고합니다.
+
+```yaml
+primary_route: security-field-notes / windshock.github.io / windshock/oh-my-secuaudit / security-hypothesis-lab / fortify_ml / templates / detections / experiments
+output_type: concept-page / detection-hypothesis / experiment / blog-post / checklist / issue / PR / tool-change / template
+best_next_action:
+not_recommended:
+reason:
+```
+
+## 11. 참고 자료
 
 - 
