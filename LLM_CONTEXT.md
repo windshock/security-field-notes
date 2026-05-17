@@ -5,9 +5,16 @@
 ## Repository Purpose
 보안 리서치 과정에서 발생하는 파편화된 정보를 **증류(Distillation)**하고 **연결(Linking)**하여, 검증 가능한 탐지 가설과 실험으로 발전시키는 지식 엔진입니다.
 
-## Value Criteria
+이 저장소는 통찰의 종착지가 아니라 **routing hub**입니다. 가치 있는 노트는 필요하면 concept page, experiment, detection, blog, checklist, downstream repo issue/PR로 전환되어야 합니다.
 
-우선순위 판단은 [`VALUE_CRITERIA.md`](VALUE_CRITERIA.md)와 [`CONVERSION_STATUS.md`](CONVERSION_STATUS.md)를 함께 참고합니다.
+## Value & Impact Routing
+
+우선순위 판단은 다음 네 문서를 함께 참고합니다.
+
+1. [`VALUE_CRITERIA.md`](VALUE_CRITERIA.md): 이 주제가 본질적으로 가치 있는가?
+2. [`CONVERSION_STATUS.md`](CONVERSION_STATUS.md): 이미 blog / tool / checklist / experiment로 전환되었는가?
+3. [`DOWNSTREAM_TARGETS.md`](DOWNSTREAM_TARGETS.md): 살아 있는 실행 대상이 있는가?
+4. [`IMPACT_ROUTER.md`](IMPACT_ROUTER.md): 다음 행동을 어디로 라우팅해야 하는가?
 
 `AGENTS.md`의 concept page 생성 임계치(노트 3개 이상, 또는 노트 2개 + detection/experiment 1개 이상)는 **준비도(readiness)** 기준입니다. 최종 우선순위는 다음 질문으로 판단합니다.
 
@@ -15,10 +22,20 @@
 발견을 구조로 바꾸고, 분석을 방법론으로 남기며, 기술적 사실을 지속 가능한 보안 개선으로 연결하는가?
 ```
 
-단, 이미 블로그화되었거나 도구화된 주제는 추가 field note의 한계효용이 낮습니다. 따라서 AI agent는 새 concept page, detection, experiment, blog seed를 제안할 때 다음 두 단계를 모두 확인합니다.
+단, 이미 블로그화되었거나 도구화된 주제는 추가 field note의 한계효용이 낮습니다. 또한 살아 있는 downstream target이 있으면 새 field note보다 해당 repo / blog / checklist / experiment로 보내는 것이 우선입니다.
 
-1. `VALUE_CRITERIA.md`: 이 주제가 본질적으로 가치 있는가?
-2. `CONVERSION_STATUS.md`: 이미 blog / tool / checklist / experiment로 전환되었는가, 아니면 아직 field note에 머물러 있는가?
+### Impact Routing Order
+
+새 작업을 제안하기 전에 다음 순서로 판단합니다.
+
+1. 이 주제가 가치 있는가? (`VALUE_CRITERIA.md`)
+2. 이미 전환되었는가? (`CONVERSION_STATUS.md`)
+3. 적용할 살아 있는 대상이 있는가? (`DOWNSTREAM_TARGETS.md`)
+4. 있다면 새 field note보다 해당 대상의 issue / PR / checklist / template / experiment로 보낸다. (`IMPACT_ROUTER.md`)
+5. 실행 대상이 없고 반복 개념이면 concept page로 보낸다.
+6. 관찰값이 부족하면 experiment로 보낸다.
+7. 탐지 규칙으로 만들 수 있으면 detection으로 보낸다.
+8. 사회적/조직적 메시지가 강하고 기술 근거가 충분하면 blog seed로 보낸다.
 
 ## Directory Schema
 - `knowledge/`: 주제별 리서치 노트 및 정리 자료
@@ -53,15 +70,16 @@
 - [Linux kernel maintenance context for AI security analysis](knowledge/code-analysis/2026-05-18-linux-kernel-maintenance-context-for-ai-security-analysis.md): Linux kernel의 subsystem, maintainer, mailing list, commit history, Documentation 구조를 AI agent가 따라갈 수 있는 repository memory model로 재해석하고 `oh-my-secuaudit`에 적용할 MAINTAINERS/contracts/decisions/checklists 방향 정리
 
 Concept page candidates (AGENTS §10 임계점 도달 시 생성. 임계점: 노트 3+ 또는 노트 2+ + detection/experiment 1):
-- `llm-assisted-vulnerability-discovery` — 현재: note 3 (GTIG, MDASH, ExploitGym) + experiment 1. **임계점 도달. Concept page 생성 검토 필요.**
+- `llm-assisted-vulnerability-discovery` — 현재: note 3 (GTIG, MDASH, ExploitGym) + experiment 1. **임계점 도달. Concept page 생성 검토 필요. 단, `oh-my-secuaudit` overlap이 있으므로 `IMPACT_ROUTER.md`로 route 우선 판단.**
 - `ai-enabled-dynamic-modification` — 현재: note 1 (GTIG) + detection 1. **1 note 부족.**
 - `ai-agent-supply-chain-risk` — 현재: note 1~2 (GTIG, oh-my-secuaudit 부분 포함). **note 1~2개 부족.**
-- `ai-security-benchmark-harness` — 현재: note 2 (MDASH, ExploitGym) + experiment 1. **임계점 도달 후보. llm-assisted-vulnerability-discovery와 분리할지 검토 필요.**
-- `agent-readable-repository-operations` — 현재: note 2 (LSP/Sourcegraph, Linux kernel maintenance context). **1 note 또는 detection/experiment 1개 부족.**
+- `ai-security-benchmark-harness` — 현재: note 2 (MDASH, ExploitGym) + experiment 1. **임계점 도달 후보. llm-assisted-vulnerability-discovery와 분리할지 검토 필요. 단, concept page보다 downstream contract/registry gap 우선 검토.**
+- `agent-readable-repository-operations` — 현재: note 2 (LSP/Sourcegraph, Linux kernel maintenance context). **1 note 또는 detection/experiment 1개 부족. 단, Linux kernel maintenance note는 `oh-my-secuaudit` downstream target이 명확함.**
 - `linux-rootkit-reuse-and-hook-surface` — 현재: note 1 (OrBit/Medusa) + detection 1. **1 note 부족.**
 - `linux-runtime-view-divergence` — 현재: note 2 (Copy Fail/page cache, OrBit/Medusa) + detection 2. Concept 후보이나 page-cache와 rootkit을 함께 묶을지 분리할지 추가 검토 필요.
 
 ## Active Work & High-Priority TODOs
+- **Downstream Tooling**: Linux kernel식 subsystem / maintainer / ABI / decision-log model을 `oh-my-secuaudit`의 `MAINTAINERS.md`, `CONTRIBUTING.md`, `docs/contracts/`, `docs/decisions/`, `docs/review-checklists/`로 이식
 - **Research**: PLA COM API 직접 호출과 `logman.exe` 호출의 아티팩트 차이 분석
 - **Detection**: ETW session tampering 탐지 룰 고도화
 - **Experiment**: PLA/DCOM 원격 수집 실험 수행 (Windows Lab)
@@ -69,7 +87,6 @@ Concept page candidates (AGENTS §10 임계점 도달 시 생성. 임계점: 노
 - **AI Security Research**: ExploitGym / MDASH / GTIG를 연결해 `llm-assisted-vulnerability-discovery` 또는 `ai-security-benchmark-harness` concept page 생성 여부 검토
 - **AI Security Benchmarking**: model / agent / skill prompt / MCP tool binding / debugging environment / validation oracle를 분리하는 reporting schema 초안 작성
 - **AI Security Detection**: LLM/API call 이후 file write와 interpreter execution이 이어지는 Dynamic Modification sequence 탐지 가설 검증
-- **Code Analysis / Repository Operations**: Linux kernel식 subsystem / maintainer / ABI / mailing-list memory model을 `oh-my-secuaudit`의 MAINTAINERS, contracts, decisions, PR checklist 구조로 이식하는 방안 설계
 - **Linux Rootkit Research**: 공개 Linux rootkit repository를 기능별 hook surface로 분류하고 Medusa/OrBit 계열 invariant를 정적 탐지 가설로 발전
 - **Linux Rootkit Detection**: `/etc/ld.so.preload`, suspicious `.so`, hook-like export set, filesystem skeleton, nested ELF, runtime view divergence를 조합한 scoring rule 설계
 
@@ -100,7 +117,8 @@ Concept page candidates (AGENTS §10 임계점 도달 시 생성. 임계점: 노
   - `linux-rootkit-reuse-and-hook-surface`를 별도 concept page로 승격할지, `linux-runtime-view-divergence`와 통합할지 결정 필요.
 
 ## Maintenance Rules (Quick Ref)
-- **Value**: 우선순위 판단은 `VALUE_CRITERIA.md`와 `CONVERSION_STATUS.md`를 함께 참고. 임계치는 준비도 기준이고, 이미 전환된 주제는 추가 요약보다 gap / 실험 / tool issue로 전환
+- **Value**: 우선순위 판단은 `VALUE_CRITERIA.md`, `CONVERSION_STATUS.md`, `DOWNSTREAM_TARGETS.md`, `IMPACT_ROUTER.md`를 함께 참고
+- **Routing**: 살아 있는 downstream target이 있으면 새 field note보다 해당 repo / blog / checklist / experiment로 전환
 - **Linking**: 새 노드 추가 시 최소 3개의 기존 노드 연결 (`AGENTS.md §10`)
 - **Distillation**: 개별 리서치 결과는 반드시 관련 Concept 페이지에 반영
 - **Conversion Tracking**: field note가 blog / tool / checklist / experiment로 전환되면 `CONVERSION_STATUS.md`를 갱신
