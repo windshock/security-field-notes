@@ -15,6 +15,26 @@ Public repository에서는 저작권이 있는 PDF 원문을 직접 저장할 �
 | 2026-05-14 | GTIG AI Threat Tracker: Adversaries Leverage AI for Vulnerability Exploitation, Augmented Operations, and Initial Access | Article / PDF / conversation synthesis | `knowledge/ai-security/2026-05-14-gtig-ai-threat-tracker-ai-enabled-attack-operations.md` | summarized |
 | 2026-05-15 | OrBit (Re)turns: Tracking an open-source Linux rootkit across four years of forks and deployments | Article / PDF / conversation synthesis | `knowledge/linux/2026-05-15-orbit-medusa-rootkit-reuse-and-evolution.md` | summarized |
 | 2026-05-17 | ExploitGym: Can AI Agents Turn Security Vulnerabilities into Real Attacks? | Paper / PDF / conversation synthesis | `knowledge/ai-security/2026-05-17-exploitgym-benchmark-methodology-harness-control.md` | summarized |
+| 2026-05-18 | Linux Kernel Maintenance Context for AI Security Analysis | Conversation synthesis / public references | `knowledge/code-analysis/2026-05-18-linux-kernel-maintenance-context-for-ai-security-analysis.md` | summarized |
+
+## Linux Kernel Maintenance Context for AI Security Analysis
+
+- URL: https://github.com/torvalds/linux/blob/master/Documentation/process/submitting-patches.rst
+- URL: https://github.com/torvalds/linux/blob/master/Documentation/process/stable-api-nonsense.rst
+- URL: https://github.com/torvalds/linux/blob/master/Documentation/process/maintainer-handbooks.rst
+- URL: https://github.com/torvalds/linux/blob/master/MAINTAINERS
+- URL: https://github.com/windshock/oh-my-secuaudit
+- Author: windshock / ChatGPT conversation synthesis with public reference links
+- Published: Various
+- Retrieved: 2026-05-18
+- Type: Conversation synthesis / public reference links / code analysis and AI agent workflow notes
+- Related note: `knowledge/code-analysis/2026-05-18-linux-kernel-maintenance-context-for-ai-security-analysis.md`
+- Related notes:
+  - `knowledge/code-analysis/2026-05-13-source-code-indexing-lsp-sourcegraph-security.md`
+  - `knowledge/ai-security/2026-05-13-mdash-oh-my-secuaudit-comparison.md`
+  - `knowledge/ai-security/2026-05-17-exploitgym-benchmark-methodology-harness-control.md`
+- Why it matters: Linux kernel의 subsystem, maintainer, mailing list, commit history, Documentation 구조를 AI agent가 따라갈 수 있는 context system으로 재해석하고, `oh-my-secuaudit`에 MAINTAINERS, contracts, decisions, review checklists 같은 kernel-style knowledge operations를 도입하는 방향을 정리함.
+- Copyright / storage note: 공개 가능한 대화 요약과 public repository/documentation link만 기록함. 내부 코드, 사내 시스템 식별자, weaponized exploit, 민감 정보는 기록하지 않음.
 
 ## ExploitGym: Can AI Agents Turn Security Vulnerabilities into Real Attacks?
 
