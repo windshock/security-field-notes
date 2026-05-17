@@ -22,6 +22,9 @@
 - [ ] 공개 Linux rootkit repository를 기능별 hook surface로 분류하기
 - [ ] Medusa default build와 `rknet.c` 포함 build의 static fingerprint 차이를 isolated lab에서 비교하기
 - [ ] eBPF / io_uring / UEFI / cloud rootkit 계열을 Linux rootkit primitive taxonomy에 매핑하기
+- [ ] ExploitGym류 benchmark를 읽을 때 `model vs scaffold vs environment` attribution checklist 적용하기
+- [ ] ExploitGym의 neutral harness design을 Oh my secuaudit의 `AGENT_REGISTRY.yaml` / `MCP_TOOL_REGISTRY.yaml` / Tool Binding Manifest와 연결하기
+- [ ] `llm-assisted-vulnerability-discovery` concept page 생성 여부 검토하기 (GTIG + MDASH + ExploitGym으로 임계점 도달)
 
 ## Detection Ideas
 
@@ -60,6 +63,8 @@
 - [ ] LinkedIn 요약: "AI로 다 되는가? Figure 3이 보여주는 취약점 탐색의 역할 분담"
 - [ ] 블로그: "루트킷 기술은 정체됐는가? 오래된 primitive와 새로운 platform의 이동"
 - [ ] LinkedIn 요약: "OrBit/Medusa가 보여준 공개 루트킷 재사용의 현실"
+- [ ] 블로그: "ExploitGym 방법론 비판: 모델 성능인가, agent harness 성능인가?"
+- [ ] LinkedIn 요약: "AI exploit benchmark를 모델 순위표로 읽으면 안 되는 이유"
 
 ## Oh my secuaudit Follow-ups
 
@@ -76,6 +81,7 @@
 - [ ] `/audit/stream` event model 설계: status/tool_start/artifact/evidence/verifier/done 이벤트 분리
 - [ ] simulation lab의 `scenario_id / audit_id / thread_id` 규칙을 별도 설계 문서로 분리
 - [ ] `toy-java-sqli` simulation lab과 `expected_findings.yaml` regression fixture 작성
+- [ ] ExploitGym neutral harness track 개념을 Oh my secuaudit benchmark mode에 반영하기
 
 ## AI Security Follow-ups
 
@@ -84,6 +90,8 @@
 - [ ] `detections/ai-security/llm-enabled-dynamic-modification.md`를 Sigma/KQL 초안으로 확장
 - [ ] benign toy harness로 `external generation service → local rewrite → execution` telemetry 수집
 - [ ] 정상 AI coding assistant / CI code generation과 악성 Dynamic Modification의 false positive 경계 정리
+- [ ] ExploitGym / MDASH / GTIG를 연결해 `llm-assisted-vulnerability-discovery` concept page 작성하기
+- [ ] AI security benchmark의 `model / agent / skill prompt / tool binding / environment / oracle` reporting schema 초안 만들기
 
 ## Repo Maintenance
 
