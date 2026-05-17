@@ -7,7 +7,7 @@
 
 ## Value Criteria
 
-우선순위 판단은 [`VALUE_CRITERIA.md`](VALUE_CRITERIA.md)를 함께 참고합니다.
+우선순위 판단은 [`VALUE_CRITERIA.md`](VALUE_CRITERIA.md)와 [`CONVERSION_STATUS.md`](CONVERSION_STATUS.md)를 함께 참고합니다.
 
 `AGENTS.md`의 concept page 생성 임계치(노트 3개 이상, 또는 노트 2개 + detection/experiment 1개 이상)는 **준비도(readiness)** 기준입니다. 최종 우선순위는 다음 질문으로 판단합니다.
 
@@ -15,7 +15,10 @@
 발견을 구조로 바꾸고, 분석을 방법론으로 남기며, 기술적 사실을 지속 가능한 보안 개선으로 연결하는가?
 ```
 
-따라서 AI agent는 새 concept page, detection, experiment, blog seed를 제안할 때 단순히 재료가 쌓였는지만 보지 않고, 발견 이후 전환력 / 구조적 병목 설명력 / 기술적 증거성 / 방법론화 가능성 / 거버넌스 연결성 / 공유 가능성을 함께 평가합니다.
+단, 이미 블로그화되었거나 도구화된 주제는 추가 field note의 한계효용이 낮습니다. 따라서 AI agent는 새 concept page, detection, experiment, blog seed를 제안할 때 다음 두 단계를 모두 확인합니다.
+
+1. `VALUE_CRITERIA.md`: 이 주제가 본질적으로 가치 있는가?
+2. `CONVERSION_STATUS.md`: 이미 blog / tool / checklist / experiment로 전환되었는가, 아니면 아직 field note에 머물러 있는가?
 
 ## Directory Schema
 - `knowledge/`: 주제별 리서치 노트 및 정리 자료
@@ -97,7 +100,8 @@ Concept page candidates (AGENTS §10 임계점 도달 시 생성. 임계점: 노
   - `linux-rootkit-reuse-and-hook-surface`를 별도 concept page로 승격할지, `linux-runtime-view-divergence`와 통합할지 결정 필요.
 
 ## Maintenance Rules (Quick Ref)
-- **Value**: 우선순위 판단은 `VALUE_CRITERIA.md`를 함께 참고. 임계치는 준비도 기준이고, 최종 가치는 발견 이후 전환력과 구조적 기여도로 판단
+- **Value**: 우선순위 판단은 `VALUE_CRITERIA.md`와 `CONVERSION_STATUS.md`를 함께 참고. 임계치는 준비도 기준이고, 이미 전환된 주제는 추가 요약보다 gap / 실험 / tool issue로 전환
 - **Linking**: 새 노드 추가 시 최소 3개의 기존 노드 연결 (`AGENTS.md §10`)
 - **Distillation**: 개별 리서치 결과는 반드시 관련 Concept 페이지에 반영
+- **Conversion Tracking**: field note가 blog / tool / checklist / experiment로 전환되면 `CONVERSION_STATUS.md`를 갱신
 - **Safety**: PDF 원문이나 민감한 내부 정보는 절대 commit 금지
