@@ -33,11 +33,16 @@
 - [ExploitGym neutral harness experiment plan](experiments/2026-05-17-exploitgym-neutral-harness-comparison.md): third-party pre-registered agent stack, MCP/tool registry, debugging/logging policy, process prompt를 고정한 comparison track 설계
 - [LLM-enabled Dynamic Modification detection hypothesis](detections/ai-security/llm-enabled-dynamic-modification.md): 외부 generation service가 runtime executable behavior에 영향을 주는 sequence 탐지 가설
 
+### 4. Code Analysis / Agent-Readable Repository Operations
+- [Source Code Indexing, LSP, and Sourcegraph for Security Analysis](knowledge/code-analysis/2026-05-13-source-code-indexing-lsp-sourcegraph-security.md): LSP/Sourcegraph를 후보 축소와 context retrieval 계층으로 쓰는 대형 코드베이스 보안 분석 구조
+- [Linux kernel maintenance context for AI security analysis](knowledge/code-analysis/2026-05-18-linux-kernel-maintenance-context-for-ai-security-analysis.md): Linux kernel의 subsystem, maintainer, mailing list, commit history, Documentation 구조를 AI agent가 따라갈 수 있는 repository memory model로 재해석하고 `oh-my-secuaudit`에 적용할 MAINTAINERS/contracts/decisions/checklists 방향 정리
+
 Concept page candidates (AGENTS §10 임계점 도달 시 생성. 임계점: 노트 3+ 또는 노트 2+ + detection/experiment 1):
 - `llm-assisted-vulnerability-discovery` — 현재: note 3 (GTIG, MDASH, ExploitGym) + experiment 1. **임계점 도달. Concept page 생성 검토 필요.**
 - `ai-enabled-dynamic-modification` — 현재: note 1 (GTIG) + detection 1. **1 note 부족.**
 - `ai-agent-supply-chain-risk` — 현재: note 1~2 (GTIG, oh-my-secuaudit 부분 포함). **note 1~2개 부족.**
 - `ai-security-benchmark-harness` — 현재: note 2 (MDASH, ExploitGym) + experiment 1. **임계점 도달 후보. llm-assisted-vulnerability-discovery와 분리할지 검토 필요.**
+- `agent-readable-repository-operations` — 현재: note 2 (LSP/Sourcegraph, Linux kernel maintenance context). **1 note 또는 detection/experiment 1개 부족.**
 - `linux-rootkit-reuse-and-hook-surface` — 현재: note 1 (OrBit/Medusa) + detection 1. **1 note 부족.**
 - `linux-runtime-view-divergence` — 현재: note 2 (Copy Fail/page cache, OrBit/Medusa) + detection 2. Concept 후보이나 page-cache와 rootkit을 함께 묶을지 분리할지 추가 검토 필요.
 
@@ -49,6 +54,7 @@ Concept page candidates (AGENTS §10 임계점 도달 시 생성. 임계점: 노
 - **AI Security Research**: ExploitGym / MDASH / GTIG를 연결해 `llm-assisted-vulnerability-discovery` 또는 `ai-security-benchmark-harness` concept page 생성 여부 검토
 - **AI Security Benchmarking**: model / agent / skill prompt / MCP tool binding / debugging environment / validation oracle를 분리하는 reporting schema 초안 작성
 - **AI Security Detection**: LLM/API call 이후 file write와 interpreter execution이 이어지는 Dynamic Modification sequence 탐지 가설 검증
+- **Code Analysis / Repository Operations**: Linux kernel식 subsystem / maintainer / ABI / mailing-list memory model을 `oh-my-secuaudit`의 MAINTAINERS, contracts, decisions, PR checklist 구조로 이식하는 방안 설계
 - **Linux Rootkit Research**: 공개 Linux rootkit repository를 기능별 hook surface로 분류하고 Medusa/OrBit 계열 invariant를 정적 탐지 가설로 발전
 - **Linux Rootkit Detection**: `/etc/ld.so.preload`, suspicious `.so`, hook-like export set, filesystem skeleton, nested ELF, runtime view divergence를 조합한 scoring rule 설계
 
@@ -71,6 +77,9 @@ Concept page candidates (AGENTS §10 임계점 도달 시 생성. 임계점: 노
 - [ExploitGym / benchmark harness attribution](knowledge/ai-security/2026-05-17-exploitgym-benchmark-methodology-harness-control.md#12-todo)
   - AI security benchmark에서 model capability와 agent scaffold/tool/process/environment 효과를 어떻게 분리해 보고할 것인가?
   - native deployed stack track과 common neutral harness track을 어떤 reporting schema로 병렬 제시할 것인가?
+- [Linux kernel maintenance context / agent-readable repository operations](knowledge/code-analysis/2026-05-18-linux-kernel-maintenance-context-for-ai-security-analysis.md#8-실험-계획)
+  - security audit repo에서 어느 수준의 MAINTAINERS/contracts/decision log가 AI agent 분석 품질을 실제로 높이는가?
+  - output schema를 ABI처럼 관리할 때 생산성 증가와 문서화 overhead의 균형점은 어디인가?
 - [OrBit / Medusa invariant detection](detections/linux/orbit-medusa-rootkit-invariants.md#status-notes)
   - Medusa/OrBit 계열 탐지를 path/hash 중심이 아닌 invariant scoring model로 만들 때 false positive 기준을 어떻게 잡을 것인가?
   - `linux-rootkit-reuse-and-hook-surface`를 별도 concept page로 승격할지, `linux-runtime-view-divergence`와 통합할지 결정 필요.
